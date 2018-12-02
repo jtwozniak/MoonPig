@@ -16,7 +16,7 @@ Using the following `tsconfig` settings:
 we can import like this:
 
 ```javascript
-// main.tsx
+Card.tsx
 import '~/App'
 ```
 
