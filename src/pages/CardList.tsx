@@ -1,22 +1,17 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { cardsLink } from '~helper/links'
-
-type CardList = any[]
+import { Product } from '~pages/types'
 
 export function CardList() {
-  const [cardList, setCardList] = useState<CardList>([])
+  const [cardList, setCardList] = useState<Product[]>([])
 
   useEffect(() => {
     async function fetchData() {
-      try {
-        const res = await fetch(cardsLink)
-        const json = await res.json()
-        console.log(json)
-        setCardList(json.Products)
-      } catch (e) {
-        console.error(e)
-      }
+      const res = await fetch(cardsLink)
+      const json = await res.json()
+      console.log(json)
+      setCardList(json.Products)
     }
     fetchData()
   }, [])
@@ -26,7 +21,7 @@ export function CardList() {
       <h2>CardList</h2>
       <div>
         {cardList.map((card, i) => (
-          <div>Card {i}</div>
+          <div key={String(i)}>Card {i}</div>
         ))}
       </div>
     </>
