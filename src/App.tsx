@@ -11,7 +11,7 @@ export const App = () => (
         <Link to="/">Cards</Link>
       </nav>
 
-      <Route path="/" exact component={CardList} />
+      <Route path="/" exact={true} component={CardList} />
       <Route path="/card/:id" component={Card} />
     </div>
   </Router>
