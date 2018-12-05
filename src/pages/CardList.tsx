@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
+import CircularProgress from '@material-ui/core/CircularProgress'
 import { cardsLink } from '~helper/links'
 import { Product } from '~pages/types'
 
@@ -19,10 +20,13 @@ export function CardList() {
   return (
     <>
       <h2>CardList</h2>
+      <br />
       <div>
-        {cardList.map((card, i) => (
-          <div key={String(i)}>Card {i}</div>
-        ))}
+        {cardList.length ? (
+          cardList.map((card, i) => <div key={String(i)}>Card {i}</div>)
+        ) : (
+          <CircularProgress />
+        )}
       </div>
     </>
   )
