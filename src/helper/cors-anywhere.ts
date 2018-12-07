@@ -6,7 +6,6 @@ export function enableCorsAnywhere() {
   const open = XMLHttpRequest.prototype.open
 
   XMLHttpRequest.prototype.open = function() {
-    console.log('dupa i kamieni kupa')
     const args = slice.call(arguments)
     const targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1])
     if (
