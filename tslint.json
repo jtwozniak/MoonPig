@@ -9,6 +9,8 @@
   "rules": {
     "variable-name": false,
     "function-name": false,
-    "no-duplicate-imports": false
+    "no-duplicate-imports": false,
+    "import-name": false,
+    "jsx-boolean-value": false
   }
 }
