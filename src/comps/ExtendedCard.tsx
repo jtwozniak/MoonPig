@@ -9,9 +9,10 @@ const Root = styled.div`
   width: 80%
 `
 
-const Img = styled(Image)`
-  margin: 10px 5px
-  width: 40%
+const ImgDiv = styled.div`
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
 `
 
 export const ExtendedCard = ({
@@ -27,14 +28,16 @@ export const ExtendedCard = ({
     Name,
     <div dangerouslySetInnerHTML={{ __html: props.Description }} />, // dangerouslySetInnerHTML - Description contains html
     <>
-      <br />
+      <Divider />
       Tags: {props.DesignFeatureTags.map(tag => `#${tag}`).join(',')}
     </>,
     <>{`${DisplayName}: ${Price}${Currency}`}</>,
     <>
-      {props.ImageUrls.map(({ ImageUrl: src }) => (
-        <Img src={src} />
-      ))}
+      <ImgDiv>
+        {props.ImageUrls.map(({ ImageUrl: src }) => (
+          <Image src={src} />
+        ))}
+      </ImgDiv>
     </>,
   ]
 
