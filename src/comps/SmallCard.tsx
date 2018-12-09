@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { Link as RouteLink } from 'react-router-dom'
+import { Image } from '~comps/Image'
 import { Link, Review } from '~types/Product'
 
 export type ImgWithReview = {
@@ -35,7 +36,7 @@ export const SmallCard = ({
   id,
 }: ImgWithReview) => (
   <RouteLinkStyled to={`/card/${id}`}>
-    <img src={image.Href} />
+    <Image src={image.Href} />
     <div>
       {reviews.AverageStarReviewRating &&
         `Rating (${Math.round(reviews.AverageStarReviewRating * 10) /
