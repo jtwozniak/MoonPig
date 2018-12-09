@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { Link as RouteLink } from 'react-router-dom'
-import { Link, Review } from '~pages/types'
+import { Link, Review } from '~types/Product'
 
 export type ImgWithReview = {
   image: Link
@@ -10,12 +10,10 @@ export type ImgWithReview = {
   id: string
 }
 
-const Div = styled.div`
-  display: flex
-  flex-direction: column
-`
-
-const CeneterDiv = styled.div`
+const RouteLinkStyled = styled(RouteLink)`
+  color: inherit
+  text-decoration: none
+  
   display: flex
   flex-direction: column
   
@@ -30,11 +28,6 @@ const CeneterDiv = styled.div`
   }
 `
 
-const RouteLinkStyled = styled(RouteLink)`
-  color: inherit
-  text-decoration: none
-`
-
 export const SmallCard = ({
   image,
   reviews,
@@ -42,18 +35,14 @@ export const SmallCard = ({
   id,
 }: ImgWithReview) => (
   <RouteLinkStyled to={`/card/${id}`}>
-    <Div>
-      <CeneterDiv>
-        <img src={image.Href} />
-        <div>
-          {reviews.AverageStarReviewRating &&
-            `Rating (${Math.round(reviews.AverageStarReviewRating * 10) /
-              10}) Counts (${reviews.ReviewCount})`}
-        </div>
-        <div>
-          {description && description[0].toUpperCase() + description.slice(1)}
-        </div>
-      </CeneterDiv>
-    </Div>
+    <img src={image.Href} />
+    <div>
+      {reviews.AverageStarReviewRating &&
+        `Rating (${Math.round(reviews.AverageStarReviewRating * 10) /
+          10}) Counts (${reviews.ReviewCount})`}
+    </div>
+    <div>
+      {description && description[0].toUpperCase() + description.slice(1)}
+    </div>
   </RouteLinkStyled>
 )

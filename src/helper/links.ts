@@ -6,4 +6,4 @@ export const cardsLink = decorateLink(
 )
 
 export const getCardLink = (id: string) =>
-  decorateLink(`moonpig.com/uk/api/product/product/?mpn=pu1162${id}`)
+  decorateLink(`moonpig.com/uk/api/product/product/?mpn=${id}`)
