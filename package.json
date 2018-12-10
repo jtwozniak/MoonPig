@@ -62,7 +62,7 @@
     },
     "testRegex": ".+\\.spec.(ts|tsx)?$",
     "setupFiles": [
-      "./tools/config/jest/jestSetup.ts"
+      "./config/jestSetup.ts"
     ]
   }
 }
