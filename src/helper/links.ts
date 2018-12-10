@@ -1,4 +1,4 @@
-export const corsUrl = `http://cors-anywhere.herokuapp.com/`
+export const corsUrl = `https://cors-anywhere.herokuapp.com/`
 export const decorateLink = (url: string) => `${corsUrl}${url}`
 
 export const cardsLink = decorateLink(
