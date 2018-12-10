@@ -5,6 +5,8 @@ The application can be built and hosted statically. After putting it on Github i
 I wanted to write two tests but enzyme doesn't support react hooks yet, you can try to run the only one test
 Responsiveness could be enhanced. Mobile browser could be detected etc
 If this was a real project the things I could consider to add:
-A11y, i18, E2E - cypress, use monorepo, build rpm, add graphql, and more...
+Webpack, A11y, i18, E2E - cypress, use monorepo, build rpm, add graphql, and more...
 
 I could make it look better, but really for the interview process, it's too much already I guess
+
+In addition to code check package.json as well
